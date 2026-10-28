@@ -16,7 +16,7 @@ const projectsDetailsData = {
         description: "Bazar Dor is a real-time market price monitoring system tailored for regional markets across Bangladesh. It lets consumers and merchants check and track prices for essential commodities.",
         techStack: ["Next.js 14 App Router", "React", "TypeScript", "Tailwind CSS", "daisyUI", "BetterAuth"],
         liveLink: "https://amar-bazar-dor-website.vercel.app/",
-        clientGithub: "https://github.com/mdaburayhan/bazar-dor-client",
+        clientGithub: "https://github.com/rayhan612007/amar_bazar_dor_website",
         challenges: [
             "Optimizing real-time search queries over regional pricing datasets without lag.",
             "Implementing resilient client-side authentication states across dynamic server components.",
@@ -32,7 +32,7 @@ const projectsDetailsData = {
         description: "A responsive fitness and workout tracking web application to log daily routines, monitor exercises, and seamlessly track personal training progress.",
         techStack: ["Next.js", "React", "Tailwind CSS", "DaisyUI"],
         liveLink: "https://fitlog-six-alpha.vercel.app",
-        clientGithub: "https://github.com/mdaburayhan/fitlog",
+        clientGithub: "https://github.com/rayhan612007/fitlog",
         challenges: [
             "Managing persistent local state for custom workout routines and sets.",
             "Optimizing responsive layouts for seamless tracking across mobile and desktop viewports.",
@@ -48,7 +48,7 @@ const projectsDetailsData = {
         description: "DevStack is an interactive technology stack builder web application created to assemble, curate, and preview modern development stacks and UI tools.",
         techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "DaisyUI"],
         liveLink: "https://devstack-eta.vercel.app/",
-        clientGithub: "https://github.com/mdaburayhan/devstack",
+        clientGithub: "https://github.com/rayhan612007/DevStack",
         challenges: [
             "Managing instantaneous state updates across client bookmark collections and tech selections.",
             "Ensuring zero layout shifts during fast dynamic component filtering.",
