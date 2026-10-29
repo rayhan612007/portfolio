@@ -135,8 +135,8 @@ export default function Navbar() {
           </div>
 
           <Button className="w-full rounded-full gap-2 mt-2">
-            <Link href="#contact" onClick={() => setIsOpen(false)}>
-              <span>Get In Touch</span>
+            <Link href="#contact" className="flex gap-2" onClick={() => setIsOpen(false)}>
+              <span>Hire Me</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
