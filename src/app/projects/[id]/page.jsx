@@ -14,7 +14,7 @@ const projectsDetailsData = {
         title: "Bazar Dor (বাজার দর)",
         image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop",
         description: "Bazar Dor is a real-time market price monitoring system tailored for regional markets across Bangladesh. It lets consumers and merchants check and track prices for essential commodities.",
-        techStack: ["Next.js 14 App Router", "React", "TypeScript", "Tailwind CSS", "daisyUI", "BetterAuth"],
+        techStack: ["Next.js 14 App Router", "React", "TypeScript", "Tailwind CSS", "daisyUI", "HeroUI", "BetterAuth"],
         liveLink: "https://amar-bazar-dor-website.vercel.app/",
         clientGithub: "https://github.com/rayhan612007/amar_bazar_dor_website",
         challenges: [

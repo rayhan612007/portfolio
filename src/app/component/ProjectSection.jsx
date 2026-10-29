@@ -14,7 +14,7 @@ export const projects = [
         title: "Bazar Dor (বাজার দর)",
         image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop",
         shortDescription: "Real-time web application for tracking essential commodity prices across regional markets in Bangladesh.",
-        tags: ["Next.js", "Tailwind CSS", "daisyUI", "BetterAuth"],
+        tags: ["Next.js", "Tailwind CSS", "daisyUI", "HeroUI", "BetterAuth"],
         liveLink: "https://amar-bazar-dor-website.vercel.app/",
         clientGithub: "https://github.com/rayhan612007/amar_bazar_dor_website",
     },
@@ -32,7 +32,7 @@ export const projects = [
         title: "DevStack - Interactive Technology Stack Builder",
         image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
         shortDescription: "An interactive technology stack builder web application to assemble and preview modern development stacks.",
-        tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "DaisyUI"],
+        tags: ["React", "TypeScript", "Tailwind CSS", "DaisyUI"],
         liveLink: "https://devstack-eta.vercel.app",
         clientGithub: "https://github.com/rayhan612007/DevStack",
     }

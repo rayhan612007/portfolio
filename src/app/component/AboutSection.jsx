@@ -22,14 +22,14 @@ export default function AboutSection() {
 
         {/* Section Header */}
         <div className="text-center space-y-3">
-          <Badge variant="outline" className="border-primary/40 text-primary px-4 py-1 text-xs uppercase tracking-widest font-semibold">
+          <Badge variant="outline" className="border-primary/40 text-primary px-4 sm:py-3 py-2 sm:text-xl uppercase tracking-widest font-semibold">
             About Me
           </Badge>
           <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             Passionate Web Developer Crafting Modern Digital Experiences
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-            Get to know my journey, the technologies I specialize in, my engineering values, and what keeps me creative outside of coding.
+            Get to know my journey, the technologies I specialize in, my development values, and what keeps me creative outside of coding.
           </p>
         </div>
 
@@ -46,11 +46,17 @@ export default function AboutSection() {
                 <h3>My Web Development Journey</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                My passion for programming started with a deep curiosity for how web experiences come to life. As a Computer Science and Technology student at Faridpur Polytechnic Institute, I dove deep into web development—building a rock-solid foundation in HTML, CSS, and modern JavaScript before advancing to complex frontend ecosystems with React, Next.js, and Tailwind CSS.
+                My passion for programming started with a deep curiosity for how web experiences come to life. As a Computer Science and Technology student at Faridpur Polytechnic Institute, I learned HTML, CSS, and JavaScript and started building small projects of my own.
+
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                From there, I moved into Programming Hero and therefore I learn to work with modern tools like React, Next.js, and Tailwind CSS, and began creating interfaces that feel fast, polished, and professional. I also learned how the front end connects to the back end by building APIs with Express.js and adding secure authentication with BetterAuth.
               </p>
               <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                 I specialize in transforming complex UI/UX designs into fast, clean, and intuitive digital interfaces. I thrive on architecting responsive web applications, managing dynamic states, and optimizing client-side performance.
               </p>
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">I&apos;m still learning every day, because the web keeps evolving and I want to evolve with it.</p>
+
             </CardContent>
           </Card>
 
@@ -68,14 +74,14 @@ export default function AboutSection() {
                   <GraduationCap className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-foreground font-medium block">Education</strong>
-                    Diploma in Computer Science & Tech
+                    Diploma in Computer Science & Technology
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <Briefcase className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-foreground font-medium block">Focus Area</strong>
-                    Frontend Web Development
+                    Web Development
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -98,6 +104,9 @@ export default function AboutSection() {
                 <Sparkles className="h-5 w-5" />
               </div>
               <h3>The Type of Work I Enjoy</h3>
+            </div>
+            <div>
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">I do my best work where design and engineering meet. I enjoy taking a UI/UX design and turning it into a clean, responsive, and intuitive interface that works smoothly on every device.</p>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
@@ -163,8 +172,24 @@ export default function AboutSection() {
 
           </div>
         </div>
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold text-foreground">Personality</h3>
+          <div className="grid">
+
+            <Card className="shadow-sm border-border/60 hover:border-primary/40 transition-all duration-300">
+              <CardContent className="p-6 flex items-start space-x-4">
+                <div>
+                  <p className="text-md sm:text-md text-muted-foreground mt-1.5 leading-relaxed">
+                    I’m curious, calm, and detail-oriented. I like understanding the “why” before writing the “how,” I welcome feedback, and I take ownership of what I build. I believe good software should be simple, fast, and enjoyable to use.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+          </div>
+        </div>
 
       </div>
-    </section>
+    </section >
   );
 }

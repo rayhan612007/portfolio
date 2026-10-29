@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Download, Mail, ArrowUpRight, Code, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa6";
 
 export default function HeroSection() {
     return (
@@ -17,8 +18,8 @@ export default function HeroSection() {
                     <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
                         <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs sm:text-sm font-medium text-primary">
                             <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-600 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-700"></span>
                             </span>
                             Available for New Projects & Roles
                         </div>
@@ -33,7 +34,7 @@ export default function HeroSection() {
                         <div className="space-y-3 text-left">
                             <div className="space-y-2">
                                 <span className="inline-block px-3.5 py-1.5 text-xs font-semibold rounded-full bg-primary/10 text-primary border border-primary/20 uppercase tracking-widest">
-                                    Frontend Web Developer
+                                    OPEN TO WORK · FRONTEND DEVELOPER
                                 </span>
                                 <h1 className="text-2xl sm:text-2xl font-extrabold tracking-tight text-foreground">
                                     Hi, I&apos;m <span className="text-primary">Md Abu Rayhan</span>
@@ -41,11 +42,11 @@ export default function HeroSection() {
                             </div>
 
                             <p className="text-lg sm:text-xl font-medium text-muted-foreground">
-                                Specializing in Next.js, React, and modern CSS architecture to build lightning-fast, scalable user interfaces.
+                                A frontend developer specializing in Next.js and React, creating fast, accessible interfaces that users enjoy and teams can maintain.
                             </p>
 
                             <p className="max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
-                                I transform complex design patterns into clean, performant, and responsive client-side applications. From crafting pixel-perfect layouts with <span className="font-semibold text-foreground">Tailwind CSS , HeroUI ,ShadCN and  DaisyUI</span> to seamlessly connecting <span className="font-semibold text-foreground">Express.js APIs and BetterAuth</span> sessions, I focus on delivering exceptional user experiences and micro-interactions.
+                                I turn complex designs into clean, responsive, high-performance web applications. With Tailwind CSS, ShadCN, and HeroUI, I craft pixel-perfect interfaces, and with Express.js APIs and BetterAuth, I connect them to secure, reliable back ends. Every project I build focuses on speed, usability, and details that make the experience feel effortless.
                             </p>
                         </div>
                         {/* Action Buttons */}
@@ -74,6 +75,12 @@ export default function HeroSection() {
                                 { label: "GitHub", href: "https://github.com/rayhan612007", icon: FaGithub },
                                 { label: "LinkedIn", href: "https://www.linkedin.com/in/rayhan612007/", icon: FaLinkedin },
                                 { label: "Email", href: "mailto:mdaburayhan612007@gmail.com", icon: Mail },
+
+                                {
+                                    label: "Facebook",
+                                    href: "https://www.facebook.com/mdrayhan612007",
+                                    icon: FaFacebook,
+                                },
                             ].map((soc) => {
                                 const IconComponent = soc.icon;
                                 return (

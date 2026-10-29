@@ -74,7 +74,7 @@ export default function ContactSection() {
                                 </div>
                                 <div>
                                     <h4 className="text-sm font-medium text-muted-foreground">Location</h4>
-                                    <p className="font-semibold">Faridpur / Dhaka, Bangladesh</p>
+                                    <p className="font-semibold"> Bogura, Bangladesh</p>
                                 </div>
                             </CardContent>
                         </Card>
