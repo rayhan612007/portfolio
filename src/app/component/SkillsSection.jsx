@@ -28,6 +28,7 @@ import {
     SiZod
 } from 'react-icons/si';
 import { FaShieldAlt } from 'react-icons/fa';
+import Reveal from '@/components/reveal';
 
 const skills = [
     // Frontend
@@ -57,12 +58,19 @@ const categories = ['All', 'Frontend', 'Backend', 'Tools'];
 export default function SkillsSection() {
     const [activeCategory, setActiveCategory] = useState('All');
 
+    const handleSpotlight = (e) => {
+        const el = e.currentTarget;
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--mouse-x', `${e.clientX - r.left}px`);
+        el.style.setProperty('--mouse-y', `${e.clientY - r.top}px`);
+    };
+
     const filteredSkills = activeCategory === 'All'
         ? skills
         : skills.filter((skill) => skill.category === activeCategory);
 
     return (
-        <section id="skills" className="py-20 px-4 sm:px-6 bg-background transition-colors duration-300">
+        <section id="skills" className="py-20 md:py-24 px-4 sm:px-6 bg-background transition-colors duration-300">
             <div className="max-w-6xl mx-auto space-y-12">
 
                 {/* Header */}
@@ -98,10 +106,11 @@ export default function SkillsSection() {
 
                 {/* Grid Display */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    {filteredSkills.map((skill) => (
+                    {filteredSkills.map((skill, i) => (
+                        <Reveal key={skill.name} delay={(i % 6) * 60}>
                         <div
-                            key={skill.name}
-                            className="group relative flex flex-col items-center justify-center p-5 h-32 rounded-2xl bg-card border border-border/60 shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer overflow-hidden"
+                            onMouseMove={handleSpotlight}
+                            className="spotlight group relative flex flex-col items-center justify-center p-5 h-32 rounded-2xl bg-card border border-border/60 shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer overflow-hidden"
                         >
                             {/* Subtle background glow effect on hover */}
                             <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -116,6 +125,7 @@ export default function SkillsSection() {
                                 {skill.name}
                             </span>
                         </div>
+                        </Reveal>
                     ))}
                 </div>
 

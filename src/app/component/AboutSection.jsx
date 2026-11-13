@@ -14,15 +14,16 @@ import {
   MapPin,
   Briefcase
 } from "lucide-react";
+import Reveal from "@/components/reveal";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-20 md:py-24 bg-background">
       <div className="container mx-auto px-4 max-w-5xl space-y-12">
 
         {/* Section Header */}
         <div className="text-center space-y-3">
-          <Badge variant="outline" className="border-primary/40 text-primary px-4 sm:py-3 py-2 sm:text-xl uppercase tracking-widest font-semibold">
+          <Badge variant="outline" className="border-primary/40 text-primary px-4 py-1.5 text-xs uppercase tracking-widest font-semibold rounded-full bg-primary/5">
             About Me
           </Badge>
           <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -34,6 +35,7 @@ export default function AboutSection() {
         </div>
 
         {/* 1. Programming Journey & Quick Specs */}
+        <Reveal>
         <div className="grid md:grid-cols-3 gap-6">
 
           {/* Detailed Journey */}
@@ -81,7 +83,7 @@ export default function AboutSection() {
                   <Briefcase className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-foreground font-medium block">Focus Area</strong>
-                    Web Development
+                    Full-Stack Development (MERN)
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -95,8 +97,10 @@ export default function AboutSection() {
             </CardContent>
           </Card>
         </div>
+        </Reveal>
 
         {/* 2. The Type of Work I Enjoy */}
+        <Reveal>
         <Card className="shadow-sm border-border/60">
           <CardContent className="p-6 sm:p-8 space-y-6">
             <div className="flex items-center gap-2.5 text-primary font-semibold text-lg sm:text-xl">
@@ -109,10 +113,10 @@ export default function AboutSection() {
               <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">I do my best work where design and engineering meet. I enjoy taking a UI/UX design and turning it into a clean, responsive, and intuitive interface that works smoothly on every device.</p>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-6">
               <div className="p-5 rounded-xl bg-muted/40 border border-border/40 space-y-2">
                 <div className="flex items-center gap-2 font-semibold text-foreground text-base">
-                  <Layout className="h-4 w-4 text-amber-500" /> Dynamic & Responsive UIs
+                  <Layout className="h-4 w-4 text-secondary" /> Dynamic & Responsive UIs
                 </div>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   Building pixel-perfect, mobile-first web applications with accessible components, smooth micro-interactions, and visual polish.
@@ -121,7 +125,7 @@ export default function AboutSection() {
 
               <div className="p-5 rounded-xl bg-muted/40 border border-border/40 space-y-2">
                 <div className="flex items-center gap-2 font-semibold text-foreground text-base">
-                  <Terminal className="h-4 w-4 text-blue-500" /> Modern Frontend Architecture
+                  <Terminal className="h-4 w-4 text-accent" /> Modern Full-Stack Architecture
                 </div>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   Structuring scalable codebases in Next.js/React, integrating REST APIs, managing global states, and keeping performance high.
@@ -136,8 +140,10 @@ export default function AboutSection() {
             </div>
           </CardContent>
         </Card>
+        </Reveal>
 
         {/* 3. Personal Interests & Hobbies */}
+        <Reveal>
         <div className="space-y-4">
           <h3 className="text-xl font-semibold text-foreground">Beyond The Code Editor</h3>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -172,6 +178,8 @@ export default function AboutSection() {
 
           </div>
         </div>
+        </Reveal>
+        <Reveal>
         <div className="space-y-4">
           <h3 className="text-xl font-semibold text-foreground">Personality</h3>
           <div className="grid">
@@ -179,7 +187,7 @@ export default function AboutSection() {
             <Card className="shadow-sm border-border/60 hover:border-primary/40 transition-all duration-300">
               <CardContent className="p-6 flex items-start space-x-4">
                 <div>
-                  <p className="text-md sm:text-md text-muted-foreground mt-1.5 leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     I’m curious, calm, and detail-oriented. I like understanding the “why” before writing the “how,” I welcome feedback, and I take ownership of what I build. I believe good software should be simple, fast, and enjoyable to use.
                   </p>
                 </div>
@@ -188,6 +196,7 @@ export default function AboutSection() {
 
           </div>
         </div>
+        </Reveal>
 
       </div>
     </section >

@@ -35,9 +35,9 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="border-t border-slate-200 bg-white/80 text-slate-900 backdrop-blur-md transition-colors duration-300 dark:border-white/10 dark:bg-white/10 dark:text-white">
-            <div className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-8 items-center">
+        <footer className="border-t border-border/60 bg-card/60 text-foreground backdrop-blur-md transition-colors duration-300">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 items-center">
                     {/* Brand */}
                     <div className="space-y-3">
                         <Link
@@ -54,11 +54,11 @@ export default function Footer() {
 
                             <span className="text-3xl font-bold tracking-tight">
                                 Rayhan
-                                <span className="text-blue-600 dark:text-blue-500">.dev</span>
+                                <span className="text-primary">.dev</span>
                             </span>
                         </Link>
 
-                        <p className="max-w-md text-sm leading-6 text-slate-600 dark:text-slate-400">
+                        <p className="max-w-md text-sm leading-6 text-muted-foreground">
                             Building modern, responsive, and user-friendly
                             web experiences. Turning ideas into real web
                             applications.
@@ -67,7 +67,7 @@ export default function Footer() {
 
                     {/* Connect */}
                     <div className="md:justify-self-end md:w-full md:max-w-md">
-                        <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                        <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">
                             Connect With Me
                         </h3>
 
@@ -91,11 +91,9 @@ export default function Footer() {
                                         }
                                         aria-label={social.name}
                                         className="flex p-2.5 items-center justify-center
-                                        rounded-full border border-slate-200 bg-slate-50
-                                        text-slate-600 transition-all duration-300
-                                        hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-blue-600
-                                        dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300
-                                        dark:hover:text-blue-400"
+                                        rounded-full border border-border/60 bg-background
+                                        text-muted-foreground transition-all duration-300
+                                        hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/10 hover:text-primary"
                                     >
                                         <Icon size={18} />
                                     </Link>
@@ -106,11 +104,11 @@ export default function Footer() {
                 </div>
 
                 {/* Copyright */}
-                <div className="mt-8 border-t border-slate-200 pt-6 dark:border-white/10">
-                    <div className="flex flex-col gap-3 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between dark:text-slate-400">
+                <div className="mt-8 border-t border-border/60 pt-6">
+                    <div className="flex flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
                         <p>
                             © {currentYear}{" "}
-                            <span className="font-semibold text-blue-600 dark:text-blue-400">
+                            <span className="font-semibold text-primary">
                                 Rayhan.dev
                             </span>
                             . All rights reserved.

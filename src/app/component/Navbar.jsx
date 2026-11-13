@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Code2, Sparkles, ArrowRight, Moon, Sun } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "cn";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 
@@ -18,6 +19,7 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -25,6 +27,9 @@ export default function Navbar() {
     setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - doc.clientHeight;
+      setProgress(max > 0 ? doc.scrollTop / max : 0);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -52,7 +57,7 @@ export default function Navbar() {
             />
           </div>
           <span className="font-extrabold text-lg sm:text-xl tracking-tight">
-            Rayhan<span className="text-blue-500 font-mono">.dev</span>
+            Rayhan<span className="text-secondary font-mono">.dev</span>
           </span>
         </Link>
 
@@ -80,16 +85,24 @@ export default function Navbar() {
               className="rounded-full w-9 h-9 border-border/60 hover:bg-muted"
               aria-label="Toggle theme"
             >
-              {isDarkMode ? <Sun className="h-4 w-4 text-amber-400" /> : <Moon className="h-4 w-4 text-slate-700" />}
+              {isDarkMode ? <Sun className="h-4 w-4 text-secondary" /> : <Moon className="h-4 w-4 text-foreground" />}
             </Button>
           )}
 
-          <Button size="sm" className="rounded-full shadow-sm hover:shadow-primary/20 transition-all px-5">
-            <Link href="#contact" className="flex items-center gap-2">
-              <span>Hire Me</span>
-              <Sparkles className="h-3.5 w-3.5 text-amber-300" />
-            </Link>
-          </Button>
+          <Link
+            href="#contact"
+            className={cn(
+              buttonVariants({ size: "sm" }),
+              "group relative h-9 overflow-hidden rounded-full px-5 shadow-md shadow-primary/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/40 active:scale-95"
+            )}
+          >
+            {/* Shine sweep on hover */}
+            <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
+            <span className="relative transition-colors duration-300 group-hover:text-primary-foreground">
+              Hire Me
+            </span>
+            <Sparkles className="relative h-3.5 w-3.5 text-secondary transition-transform duration-300 group-hover:rotate-180 group-hover:scale-125" />
+          </Link>
         </div>
 
         {/* Mobile Right Controls */}
@@ -102,7 +115,7 @@ export default function Navbar() {
               className="rounded-full w-9 h-9"
               aria-label="Toggle theme"
             >
-              {isDarkMode ? <Sun className="h-4 w-4 text-amber-400" /> : <Moon className="h-4 w-4 text-slate-700" />}
+              {isDarkMode ? <Sun className="h-4 w-4 text-secondary" /> : <Moon className="h-4 w-4 text-foreground" />}
             </Button>
           )}
 
@@ -117,6 +130,13 @@ export default function Navbar() {
           </Button>
         </div>
       </div>
+
+      {/* Scroll progress */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-0.5 origin-left bg-linear-to-r from-secondary via-primary to-accent"
+        style={{ transform: `scaleX(${progress})` }}
+        aria-hidden
+      />
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
@@ -134,12 +154,19 @@ export default function Navbar() {
             ))}
           </div>
 
-          <Button className="w-full rounded-full gap-2 mt-2">
-            <Link href="#contact" className="flex gap-2" onClick={() => setIsOpen(false)}>
-              <span>Hire Me</span>
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
+          <Link
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "group relative mt-2 w-full overflow-hidden rounded-full py-2.5 transition-all duration-300 hover:shadow-lg hover:shadow-primary/40 active:scale-[0.97]"
+            )}
+          >
+            {/* Shine sweep on hover */}
+            <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
+            <span className="relative">Hire Me</span>
+            <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+          </Link>
         </div>
       )}
     </header>

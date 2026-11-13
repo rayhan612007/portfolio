@@ -13,8 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Rayhan.dev",
-  description: "Rayhan's Portfolio",
+  title: "Md Abu Rayhan | Full-Stack Developer (MERN)",
+  description:
+    "Full-Stack Developer (MERN) — building fast, scalable web applications with MongoDB, Express.js, React, and Node.js. Next.js frontends, Express/Node APIs, and MongoDB data layers.",
+};
+
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1a1a" },
+  ],
 };
 
 export default function RootLayout(

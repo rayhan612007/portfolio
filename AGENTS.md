@@ -7,3 +7,22 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+# Portfolio (rayhan.dev)
+
+## Stack & commands
+
+- Next.js 16.4.3 App Router + React 19, **JavaScript only** (`.js`/`.jsx`) — no TypeScript; do not add a `tsconfig.json`.
+- Commands: `npm run dev` (http://localhost:3000, Turbopack), `npm run lint` (flat config, `eslint-config-next/core-web-vitals`), `npm run build`. No tests, no CI — verification is lint + build.
+
+## Conventions that differ from defaults
+
+- **React Compiler is enabled** (`reactCompiler: true` in `next.config.mjs`) — write idiomatic React without manual `memo`/`useMemo`/`useCallback`.
+- **Tailwind v4, no `tailwind.config.js`** — theme tokens are defined in `src/app/globals.css` via `@theme inline` + CSS variables. Dark mode is the `.dark` class (`@custom-variant dark`); theme switching comes from `next-themes` `ThemeProvider` in `src/app/layout.js`.
+- **shadcn/ui with Base UI, not Radix** — `components.json` uses style `base-nova` and `@base-ui/react` primitives; UI components live in `src/components/ui` as `.jsx`. Path alias `@/*` → `src/*` (`jsconfig.json`).
+- `next/image` accepts any https remote host (`remotePatterns: hostname "**"` in `next.config.mjs`).
+
+## App layout
+
+- Home page: `src/app/page.js` composed of section components in `src/app/component/` (singular `component`, not `components`).
+- Project data lives in two places: `src/app/data/projectdata.js` (grid/cards) and inline in `src/app/projects/[id]/page.jsx` (detail pages) — update both when editing project content.

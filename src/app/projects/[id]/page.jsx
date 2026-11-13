@@ -4,7 +4,6 @@ import { use } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ExternalLink, ShieldAlert, Rocket, CheckCircle2, Layers } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FaGithub as Github } from "react-icons/fa";
@@ -68,24 +67,28 @@ export default function ProjectDetailsPage({ params }) {
         return (
             <div className="container mx-auto px-4 py-32 text-center space-y-4">
                 <h1 className="text-3xl font-bold">Project Details Not Found</h1>
-                <Button rounded="full">
-                    <Link href="/#projects">Return to Projects Grid</Link>
-                </Button>
+                <Link
+                    href="/#projects"
+                    className="group relative inline-flex h-10 items-center justify-center gap-2 overflow-hidden rounded-full bg-linear-to-r from-primary to-accent px-6 text-sm font-semibold text-white shadow-md shadow-primary/25 outline-none transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/35 focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-0"
+                >
+                    <span className="absolute inset-0 bg-linear-to-r from-transparent via-white/25 to-transparent -translate-x-full transition-transform duration-700 ease-out group-hover:translate-x-full" />
+                    Return to Projects Grid
+                </Link>
             </div>
         );
     }
 
     return (
-        <div className="py-24 bg-background min-h-screen">
+        <div className="py-20 md:py-24 bg-background min-h-screen">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-8">
 
                 {/* Navigation Back */}
-                <Button variant="ghost" size="sm" className="gap-2 rounded-full">
-                    <Link href="/#projects" className="flex gap-1 items-center">
-                        <ArrowLeft className="h-4 w-4" /> <p>Back to Projects
-                        </p>
-                    </Link>
-                </Button>
+                <Link
+                    href="/#projects"
+                    className="inline-flex h-8 w-fit items-center gap-1.5 rounded-full px-3 text-sm font-medium text-muted-foreground outline-none transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+                >
+                    <ArrowLeft className="h-4 w-4" /> Back to Projects
+                </Link>
 
                 {/* Title Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border/60 pb-6">
@@ -93,7 +96,7 @@ export default function ProjectDetailsPage({ params }) {
                         <h1 className="text-3xl sm:text-4xl font-black">{project.title}</h1>
                         <div className="flex flex-wrap gap-2 pt-1">
                             {project.techStack.map((tech) => (
-                                <Badge key={tech} variant="secondary" className="text-xs font-semibold">
+                                <Badge key={tech} variant="outline" className="text-xs font-semibold">
                                     {tech}
                                 </Badge>
                             ))}
@@ -101,16 +104,26 @@ export default function ProjectDetailsPage({ params }) {
                     </div>
 
                     <div className="flex items-center gap-3 shrink-0">
-                        <Button size="sm" className="gap-2 rounded-full">
-                            <a href={project.liveLink} target="_blank" rel="noreferrer" className="flex gap-1 items-center">
-                                <ExternalLink className="h-4 w-4" /> Live Demo
-                            </a>
-                        </Button>
-                        <Button size="sm" variant="outline" className="gap-2 rounded-full">
-                            <a href={project.clientGithub} target="_blank" rel="noreferrer" className="flex items-center gap-1">
-                                <Github className="h-4 w-4" /> GitHub Client
-                            </a>
-                        </Button>
+                        {/* Live Demo — same style as hero "Download Resume" */}
+                        <a
+                            href={project.liveLink}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="group relative inline-flex h-9 items-center justify-center gap-2 overflow-hidden rounded-full bg-linear-to-r from-primary to-accent px-5 text-sm font-semibold text-white shadow-md shadow-primary/25 outline-none transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/35 focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-0"
+                        >
+                            <span className="absolute inset-0 bg-linear-to-r from-transparent via-white/25 to-transparent -translate-x-full transition-transform duration-700 ease-out group-hover:translate-x-full" />
+                            <ExternalLink className="h-4 w-4" /> Live Demo
+                        </a>
+
+                        {/* GitHub Client — same style as hero "View Projects" */}
+                        <a
+                            href={project.clientGithub}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex h-9 items-center justify-center gap-1.5 rounded-full border border-border bg-background/60 px-5 text-sm font-semibold text-foreground outline-none transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/5 hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-0"
+                        >
+                            <Github className="h-4 w-4" /> GitHub Client
+                        </a>
                     </div>
                 </div>
 
@@ -144,7 +157,7 @@ export default function ProjectDetailsPage({ params }) {
 
                     <Card className="border border-border/60 shadow-sm">
                         <CardHeader className="flex flex-row items-center gap-2">
-                            <ShieldAlert className="h-5 w-5 text-amber-500" />
+                            <ShieldAlert className="h-5 w-5 text-secondary" />
                             <CardTitle className="text-base font-bold">Challenges & Solutions</CardTitle>
                         </CardHeader>
                         <CardContent>
@@ -161,7 +174,7 @@ export default function ProjectDetailsPage({ params }) {
 
                     <Card className="border border-border/60 shadow-sm">
                         <CardHeader className="flex flex-row items-center gap-2">
-                            <Rocket className="h-5 w-5 text-blue-500" />
+                            <Rocket className="h-5 w-5 text-accent" />
                             <CardTitle className="text-base font-bold">Future Enhancements</CardTitle>
                         </CardHeader>
                         <CardContent>
