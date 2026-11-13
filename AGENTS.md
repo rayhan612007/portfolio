@@ -25,4 +25,11 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## App layout
 
 - Home page: `src/app/page.js` composed of section components in `src/app/component/` (singular `component`, not `components`).
-- Project data lives in two places: `src/app/data/projectdata.js` (grid/cards) and inline in `src/app/projects/[id]/page.jsx` (detail pages) — update both when editing project content.
+- Routes: `/` (home), `/projects/[id]` (detail pages), `/resume` (printable resume with `print-button.jsx`; relies on `print:` Tailwind variants).
+
+## Project data — easy to get wrong
+
+- `src/app/data/projects.js` is the live shared source for the home grid (`ProjectSection.jsx`) and `/resume`. Plain module, no `"use client"`, so server and client components can both import it.
+- `src/app/projects/[id]/page.jsx` has its **own inline** `projectsDetailsData` — it does NOT import from `data/`. Its keys must match `project.id` in `projects.js` (the grid links to `/projects/${project.id}`), or the "Not Found" fallback renders.
+- Adding/editing a project means updating `projects.js` **and** the inline data in `[id]/page.jsx` — the copies have already drifted (different GitHub URLs / techStack lists).
+- `src/app/data/projectdata.js` is currently imported by nothing (stale duplicate). Don't edit it expecting changes to appear; don't confuse it with `projects.js`.

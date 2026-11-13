@@ -72,7 +72,7 @@ export default function HeroSection() {
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
                             {/* Primary CTA: logo gradient pill, sheen sweep, lift on hover */}
                             <a
-                                href="/resume"
+                                href="https://drive.google.com/file/d/19cm1pYKH0JUWtvzf6uDws8plAYE2qgIY/view"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="group relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-full bg-linear-to-r from-primary to-accent px-7 text-sm font-semibold text-white shadow-lg shadow-primary/30 outline-none transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/40 focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-0"
